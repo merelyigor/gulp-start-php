@@ -10,19 +10,21 @@
  *
  * ********************************************************
  * ********************************************************/
-const root_dir_build = 'root_dir/';
+const root_dir_build = 'public/';
 const root_src_APP = 'src/';
 const root_src_sass = root_src_APP + 'sass/**/*.sass';
 const root_src_php = root_src_APP + 'template/**/*';
 const root_src_js = root_src_APP + 'js/**/*.js';
 const root_src_libs = root_src_APP + 'libs/**/*';
+const root_src_fonts = root_src_APP + 'fonts/**/*';
 const root_src_image = root_src_APP + 'images/**/*';
 
-const build_dir_css = root_dir_build + '/css';
+const build_dir_css = root_dir_build + 'css';
 const build_dir_php = root_dir_build;
-const build_dir_js = root_dir_build + '/js';
-const build_dir_libs = root_dir_build + '/libs';
-const build_dir_image = root_dir_build + '/images';
+const build_dir_js = root_dir_build + 'js';
+const build_dir_libs = root_dir_build + 'libs';
+const build_dir_fonts = root_dir_build + 'fonts';
+const build_dir_image = root_dir_build + 'images';
 
 /***************----------------------------------------------------------------**************
  * Settings upload to server
@@ -31,7 +33,7 @@ const build_dir_image = root_dir_build + '/images';
 const ftp_host = 'host';
 const ftp_user = 'user';
 const ftp_password = 'password';
-const local_directory_src = root_dir_build;
+const local_directory_src = root_dir_build + '**';
 const FTP_directory_deploy = '/sub/domain.com/to/server/directory';
 /***************----------------------------------------------------------------**************/
 
@@ -59,7 +61,7 @@ gulp.task('sass', function () {
 
 // delete files on demand - (cash and so on)
 gulp.task('clean', function () {
-    return del(['/root_dir/*', '!root_dir']);
+    return del(['/public/*', '!public']);
 });
 
 // assembly php
@@ -86,6 +88,12 @@ gulp.task('image:build', function () {
         .pipe(gulp.dest(build_dir_image))
 });
 
+// moving fonts
+gulp.task('fonts:build', function () {
+    gulp.src(root_src_fonts)
+        .pipe(gulp.dest(build_dir_fonts))
+});
+
 // File monitoring
 gulp.task('watch', ['sass'], function () {
     gulp.watch(root_src_sass, ['sass']);
@@ -93,6 +101,7 @@ gulp.task('watch', ['sass'], function () {
     gulp.watch(root_src_js, ['js:build']);
     gulp.watch(root_src_libs, ['libs:build']);
     gulp.watch(root_src_image, ['image:build']);
+    gulp.watch(root_src_fonts, ['fonts:build']);
 });
 
 // Uploading changes to hosting
@@ -116,6 +125,7 @@ gulp.task('build', [
     'js:build',
     'libs:build',
     'image:build',
+    'fonts:build',
 ]);
 
 gulp.task('default', ['watch']);
