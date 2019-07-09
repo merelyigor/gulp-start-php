@@ -118,14 +118,15 @@ gulp.task('deploy', function () {
         .pipe(conn.dest(FTP_directory_deploy));
 });
 
-gulp.task('build', [
-    'clean',
-    'sass',
-    'php:build',
-    'js:build',
-    'libs:build',
-    'image:build',
-    'fonts:build',
-]);
+gulp.task('build', ['clean'], function () {
+    gulp.start([
+        'sass',
+        'php:build',
+        'js:build',
+        'libs:build',
+        'image:build',
+        'fonts:build'
+    ]);
+});
 
 gulp.task('default', ['watch']);
