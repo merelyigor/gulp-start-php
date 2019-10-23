@@ -1,24 +1,65 @@
 {
-  "name": "opencart-project",
-  "version": "1.0.0",
-  "description": "OpenCart Gulp Project",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "gulp-start-php",
+  "author": {
+    "name": "Merelyigor",
+    "email": "mogila1708@gmail.com",
+    "url": "https://github.com/iGorEremenko"
   },
-  "author": "Merelyigor",
+  "contributors": [
+    {
+      "name": "Merelyigor",
+      "email": "mogila1708@gmail.com",
+      "url": "https://github.com/iGorEremenko"
+    }
+  ],
+  "homepage": "https://blog.eremenko.top",
+  "version": "1.0.0",
   "license": "ISC",
+  "keywords": [
+    "HTML",
+    "project",
+    "front",
+    "gulp-start-new-project-php-example",
+    "blog"
+  ],
+  "lockfileVersion": 1,
+  "description": "Gulp php Project",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iGorEremenko/gulp-start-php/blob/master/README.md"
+  },
+  "private": true,
   "devDependencies": {
-    "browser-sync": "^2.17.3",
-    "gulp": "^3.9.1",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean-css": "^2.0.13",
-    "gulp-sass": "^2.3.2",
-    "gulp-util": "^3.0.7",
+    "gulp-clean-css": "^2.4.0",
+    "gulp-sass": "^3.2.1",
+    "gulp-util": "^3.0.8",
     "node-bourbon": "^4.2.8",
-    "vinyl-ftp": "^0.5.0"
+    "vinyl-ftp": "^0.6.1",
+    "del": "^5.1.0"
   },
   "dependencies": {
-    "del": "^4.1.1"
-  }
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.4.0",
+    "gulp-sass": "^3.2.1",
+    "gulp-util": "^3.0.8",
+    "node-bourbon": "^4.2.8",
+    "vinyl-ftp": "^0.6.1",
+    "del": "^5.1.0"
+  },
+  "engines": {
+    "node": "^12.10.0",
+    "npm": "^6.11.3",
+    "yarn": "^1.17.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
