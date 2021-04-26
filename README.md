@@ -16,6 +16,6 @@ Don't judge strictly did for yourself.
 
 =============
 
-[My instagram](https://www.instagram.com/merely_igor/)
+[My instagram](https://www.instagram.com/merelyigor/)
 
 [My facebook](https://www.facebook.com/profile.php?id=100009211659134)
